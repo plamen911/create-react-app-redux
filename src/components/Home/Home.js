@@ -11,7 +11,7 @@ import {
   decrementAsync
 } from '../../store/actions'
 
-const home = props => (
+const Home = props => (
   <div>
     <h1>Home</h1>
     <p>Count: {props.count}</p>
@@ -42,7 +42,7 @@ const home = props => (
   </div>
 )
 
-home.propTypes = {
+Home.propTypes = {
   count: PropTypes.number.isRequired,
   isIncrementing: PropTypes.bool.isRequired,
   isDecrementing: PropTypes.bool.isRequired,
@@ -66,4 +66,4 @@ const mapDispatchToProps = dispatch =>
     dispatch
   )
 
-export default connect(mapStateToProps, mapDispatchToProps)(home)
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

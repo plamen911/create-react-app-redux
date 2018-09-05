@@ -5,6 +5,8 @@ import About from './components/About/About'
 import GitHubUser from './components/GitHubUser/GitHubUser'
 import NoMatch from './components/NoMatch/NoMatch'
 import NavBar from './components/NavBar/NavBar'
+import Login from './components/Login/Login'
+import Footer from './components/Footer/Footer'
 
 const App = () => (
   <div>
@@ -16,9 +18,11 @@ const App = () => (
         <Route exact path='/' component={Home}/>
         <Route path='/about-us' component={About}/>
         <Route path='/github-user' component={GitHubUser}/>
+        <Route path='/login' component={Login}/>
         <Route component={NoMatch} />
       </Switch>
     </main>
+    <Footer />
   </div>
 )
 

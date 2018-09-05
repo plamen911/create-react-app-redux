@@ -7,3 +7,7 @@ export {
 export {
   getGitHubUserInfo
 } from './gitHubUser'
+export {
+  loggedIn,
+  loggedOut,
+} from './auth'

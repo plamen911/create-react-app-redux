@@ -6,3 +6,5 @@ export const DECREMENT = 'counter/DECREMENT'
 export const GITHUB_USER_LOADING = 'gitHubUser/GITHUB_USER_LOADING'
 export const GITHUB_USER_INFO = 'gitHubUser/GITHUB_USER_INFO'
 export const GITHUB_USER_ERROR = 'gitHubUser/GITHUB_USER_ERROR'
+
+export const LOGGED_IN = 'auth/LOGGED_IN'

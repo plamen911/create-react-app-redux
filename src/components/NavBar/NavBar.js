@@ -14,6 +14,9 @@ const navBar = () => (
         <li className='nav-item'>
           <Link to='/github-user' className='nav-link'>GitHub User</Link>
         </li>
+        <li className='nav-item'>
+          <Link to='/login' className='nav-link'>Login</Link>
+        </li>
       </ul>
     </div>
   </nav>
