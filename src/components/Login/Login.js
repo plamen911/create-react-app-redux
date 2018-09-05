@@ -74,7 +74,10 @@ class Login extends Component {
         ) : (
           <div>
             <p>Hello, {this.props.email}</p>
-            <a href="#" onClick={this.handleLogout}>Logout</a>
+            <button
+                className="btn btn-danger"
+                onClick={this.handleLogout}
+            >Logout</button>
           </div>
         )}
       </div>
