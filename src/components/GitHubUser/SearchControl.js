@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class SearchControl extends Component {
   constructor (props) {
@@ -38,6 +39,12 @@ class SearchControl extends Component {
       </form>
     )
   }
+}
+
+SearchControl.propTypes = {
+  username: PropTypes.string,
+  loading: PropTypes.bool,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 export default SearchControl

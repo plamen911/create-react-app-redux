@@ -1,15 +1,15 @@
 import React from 'react'
-import { render } from 'react-dom'
+import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { ConnectedRouter } from 'react-router-redux'
+import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from './store/store'
-import App from './App'
-
 import 'sanitize.css/sanitize.css'
 import './index.css'
 import './bootstrap.min.css'
+import App from './App'
+import registerServiceWorker from './registerServiceWorker'
 
-render(
+ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
@@ -19,3 +19,4 @@ render(
   </Provider>,
   document.getElementById('root')
 )
+registerServiceWorker()

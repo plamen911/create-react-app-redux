@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default props => {
+const searchOutput = props => {
   if (props.loading) {
     return <div>Loading...</div>
   }
@@ -15,3 +16,11 @@ export default props => {
     ))}
   </ul>
 }
+
+searchOutput.propTypes = {
+  info: PropTypes.object,
+  loading: PropTypes.bool,
+  error: PropTypes.object
+}
+
+export default searchOutput

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+
 import * as actionCreators from '../../store/actions'
 
 import SearchControl from './SearchControl'
@@ -22,6 +24,14 @@ class GitHubUser extends Component {
       </div>
     )
   }
+}
+
+GitHubUser.propTypes = {
+  username: PropTypes.string,
+  info: PropTypes.object,
+  loading: PropTypes.bool,
+  error: PropTypes.object,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({

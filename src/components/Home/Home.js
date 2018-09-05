@@ -1,5 +1,7 @@
+// https://github.com/supasate/connected-react-router/blob/master/examples/basic/src/components/Counter.js
 import React from 'react'
-import { push } from 'react-router-redux'
+import PropTypes from 'prop-types'
+import { push } from 'connected-react-router'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import {
@@ -9,7 +11,7 @@ import {
   decrementAsync
 } from '../../store/actions'
 
-const Home = props => (
+const home = props => (
   <div>
     <h1>Home</h1>
     <p>Count: {props.count}</p>
@@ -40,6 +42,12 @@ const Home = props => (
   </div>
 )
 
+home.propTypes = {
+  count: PropTypes.number.isRequired,
+  isIncrementing: PropTypes.bool.isRequired,
+  isDecrementing: PropTypes.bool.isRequired,
+}
+
 const mapStateToProps = state => ({
   count: state.counter.count,
   isIncrementing: state.counter.isIncrementing,
@@ -58,4 +66,4 @@ const mapDispatchToProps = dispatch =>
     dispatch
   )
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(home)
