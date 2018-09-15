@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import * as actionCreators from '../../store/actions'
 
 class SearchControl extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      username: this.props.username
+      username: ''
     }
   }
 
@@ -41,10 +42,12 @@ class SearchControl extends Component {
   }
 }
 
-SearchControl.propTypes = {
-  username: PropTypes.string,
-  loading: PropTypes.bool,
-  onSubmit: PropTypes.func.isRequired,
-}
+const mapStateToProps = state => ({
+  loading: state.gitHubUser.loading
+})
 
-export default SearchControl
+const mapDispatchToProps = dispatch => ({
+  onSubmit: username => dispatch(actionCreators.getGitHubUserInfo(username))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchControl)

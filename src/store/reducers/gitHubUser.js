@@ -2,7 +2,6 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const initialState = {
-  username: '',
   info: null,
   loading: false,
   error: null
@@ -13,7 +12,6 @@ export default (state = initialState, action) => {
     case actionTypes.GITHUB_USER_INFO:
       return {
         ...state,
-        username: action.payload.username,
         info: action.payload.info,
         loading: false,
         error: null

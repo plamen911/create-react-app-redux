@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 const searchOutput = props => {
   if (props.loading) {
@@ -7,7 +7,7 @@ const searchOutput = props => {
   }
 
   if (props.error) {
-    return <div>{props.error.message}</div>
+    return <div>{props.error}</div>
   }
 
   return <ul className='list-group mt-3'>
@@ -17,10 +17,10 @@ const searchOutput = props => {
   </ul>
 }
 
-searchOutput.propTypes = {
-  info: PropTypes.object,
-  loading: PropTypes.bool,
-  error: PropTypes.object
-}
+const mapStateToProps = state => ({
+  info: state.gitHubUser.info,
+  loading: state.gitHubUser.loading,
+  error: state.gitHubUser.error
+})
 
-export default searchOutput
+export default connect(mapStateToProps)(searchOutput)

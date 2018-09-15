@@ -1,6 +1,7 @@
 // Action creators can run async code
 import * as actionTypes from './actionTypes'
 import { userInfoService } from '../../api/service'
+import { parseError } from '../../api/utils'
 
 export const getGitHubUserInfo = username => {
   return dispatch => {
@@ -18,10 +19,10 @@ export const getGitHubUserInfo = username => {
           }
         })
       })
-      .catch(error => {
+      .catch(err => {
         dispatch({
           type: actionTypes.GITHUB_USER_ERROR,
-          error
+          error: parseError(err)
         })
       })
   }
