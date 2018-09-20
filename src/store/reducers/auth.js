@@ -15,9 +15,6 @@ export default (state = initialState, action) => {
         email: action.payload.email
       }
     default:
-      return {
-        ...state,
-        loading: false
-      }
+      return state
   }
 }
