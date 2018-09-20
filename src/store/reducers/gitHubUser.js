@@ -29,9 +29,6 @@ export default (state = initialState, action) => {
         error: action.error
       }
     default:
-      return {
-        ...state,
-        loading: false
-      }
+      return state
   }
 }
